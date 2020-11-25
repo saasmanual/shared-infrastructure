@@ -8,9 +8,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@aws-cdk/aws-codepipeline": "^1.62.0",
-    "@aws-cdk/core": "^1.62.0",
-    "@aws-cdk/pipelines": "^1.62.0"
+    "@aws-cdk/aws-codepipeline": "^1.75.0",
+    "@aws-cdk/core": "^1.75.0",
+    "@aws-cdk/pipelines": "^1.75.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
