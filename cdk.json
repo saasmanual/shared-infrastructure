@@ -1,0 +1,14 @@
+{
+  "app": "bin/pipeline.js",
+  "context": {
+    "@aws-cdk/core:newStyleStackSynthesis": true,
+    "repo": {
+      "name": "shared-infrastructure",
+      "owner": "saasmanual",
+      "branch": "main",
+      "secretArn": ""
+    },
+    "domainName": "saasmanual.com",
+    "certificateAlternativeNames": "*.saasmanual.com"
+  }
+}

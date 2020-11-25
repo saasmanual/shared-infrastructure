@@ -1,0 +1,31 @@
+{
+  "name": "@saasmanual/shared-infrastructure",
+  "version": "1.0.0",
+  "description": "Shared infrastructure",
+  "main": "bin/pipeline.js",
+  "bin": {
+    "shared": "pipeline.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@aws-cdk/aws-codepipeline": "^1.62.0",
+    "@aws-cdk/core": "^1.62.0",
+    "@aws-cdk/pipelines": "^1.62.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cdk:bootstrap": "npx cdk bootstrap --profile PROFILE --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess",
+    "cdk:deploy": "npx cdk deploy --profile PROFILE",
+    "cdk:destroy": "npx cdk destroy --profile PROFILE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saasmanual/shared-infrastructure.git"
+  },
+  "author": "Nikolai Onken",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/saasmanual/shared-infrastructure/issues"
+  },
+  "homepage": "https://github.com/saasmanual/shared-infrastructure#readme"
+}
