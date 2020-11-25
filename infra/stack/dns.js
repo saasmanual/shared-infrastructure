@@ -1,5 +1,5 @@
 const { Stack } = require('@aws-cdk/core');
-const { PublicHostedZone } = require('@aws-cdk/aws-route53');
+const { PublicHostedZone, MxRecord, TxtRecord, CnameRecord } = require('@aws-cdk/aws-route53');
 const { DnsValidatedCertificate } = require('@aws-cdk/aws-certificatemanager');
 
 class Dns extends Stack {
@@ -17,6 +17,39 @@ class Dns extends Stack {
       domainName,
       subjectAlternativeNames: [certificateAlternativeNames],
       hostedZone: zone
+    });
+
+    new CnameRecord(this, 'cname-www', {
+      zone: zone,
+      recordName: `www.${domainName}`,
+      domainName: `${domainName}`
+    });
+
+    // Google
+    new MxRecord(this, 'google-mail-mx', {
+      zone,
+      values: [{
+        hostName: 'ASPMX.L.GOOGLE.COM',
+        priority: 1
+      }, {
+        hostName: 'ALT1.ASPMX.L.GOOGLE.COM',
+        priority: 5
+      }, {
+        hostName: 'ALT2.ASPMX.L.GOOGLE.COM',
+        priority: 5
+      }, {
+        hostName: 'ALT3.ASPMX.L.GOOGLE.COM',
+        priority: 10
+      }, {
+        hostName: 'ALT4.ASPMX.L.GOOGLE.COM',
+        priority: 10
+      }]
+    });
+
+    new TxtRecord(this, 'google-verification-record', {
+      zone: zone,
+      recordName: `saasmanual.com`,
+      values: ['google-site-verification=ZUuhNw3ibgEF9x7ka2bTyHt72PXADfk2xZdVYr7roxg']
     });
   }
 }
