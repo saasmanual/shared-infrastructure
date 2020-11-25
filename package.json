@@ -14,9 +14,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cdk:bootstrap": "npx cdk bootstrap --profile PROFILE --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess",
-    "cdk:deploy": "npx cdk deploy --profile PROFILE",
-    "cdk:destroy": "npx cdk destroy --profile PROFILE"
+    "cdk:bootstrap": "npx cdk bootstrap --profile 629749268625_AdministratorAccess --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess",
+    "cdk:deploy": "npx cdk deploy --profile 629749268625_AdministratorAccess",
+    "cdk:destroy": "npx cdk destroy --profile 629749268625_AdministratorAccess"
   },
   "repository": {
     "type": "git",
