@@ -19,12 +19,6 @@ class Dns extends Stack {
       hostedZone: zone
     });
 
-    new CnameRecord(this, 'cname-www', {
-      zone: zone,
-      recordName: `www.${domainName}`,
-      domainName: `${domainName}`
-    });
-
     // Google
     new MxRecord(this, 'google-mail-mx', {
       zone,
