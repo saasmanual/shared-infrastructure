@@ -9,6 +9,7 @@ class Dns extends Stack {
     const domainName = this.node.tryGetContext('domainName');
     const certificateAlternativeNames = this.node.tryGetContext('certificateAlternativeNames');
     
+    // [embed: stack-public-hosted-zone]
     const zone = new PublicHostedZone(this, 'hosted-zone', {
       zoneName: domainName
     });
@@ -18,6 +19,7 @@ class Dns extends Stack {
       subjectAlternativeNames: [certificateAlternativeNames],
       hostedZone: zone
     });
+    // [/embed]
 
     // Google
     new MxRecord(this, 'google-mail-mx', {
