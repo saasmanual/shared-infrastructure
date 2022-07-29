@@ -16,7 +16,7 @@ class Dns extends Stack {
 
     new DnsValidatedCertificate(this, 'certificate', {
       domainName,
-      subjectAlternativeNames: [certificateAlternativeNames],
+      subjectAlternativeNames: certificateAlternativeNames,
       hostedZone: zone
     });
     // [/embed]
