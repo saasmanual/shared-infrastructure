@@ -9,6 +9,6 @@
       "secretArn": "arn:aws:secretsmanager:us-east-1:629749268625:secret:github/token-dHiwNL"
     },
     "domainName": "saasmanual.com",
-    "certificateAlternativeNames": "*.saasmanual.com"
+    "certificateAlternativeNames": ["*.saasmanual.com", "saasmanual.com"]
   }
 }
